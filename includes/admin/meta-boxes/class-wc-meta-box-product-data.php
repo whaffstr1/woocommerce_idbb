@@ -562,6 +562,7 @@ class WC_Meta_Box_Product_Data {
 			}
 			
     	}
+    	// end edit push to ALI
 	}
 
 	/**
