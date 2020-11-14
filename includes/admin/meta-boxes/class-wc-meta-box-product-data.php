@@ -429,6 +429,8 @@ class WC_Meta_Box_Product_Data {
 		do_action( 'woocommerce_process_product_meta_' . $product_type, $post_id );
 		// phpcs:enable WordPress.Security.NonceVerification.Missing
 
+		// Check jika ada id product maka di lakukan proses 
+		// validasi hingga post categories and product to ALI
 		if($post_id){
 
 			// EDIT CATEGORY
