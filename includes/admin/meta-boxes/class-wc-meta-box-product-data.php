@@ -503,65 +503,90 @@ class WC_Meta_Box_Product_Data {
 				if($data2!='' || !empty($data2)){
 
 					// EDIT CRUD REST API ALI ORIGIN CATEGORIES
-                    $data = array(
-                        'source_id' => 4,
-                        'category_id' => $data2
-                    );
+                    // $data = array(
+                    //     'source_id' => 4,
+                    //     'category_id' => $data2
+                    // );
  
-                    $payload = json_encode($data);
+                    // $payload = json_encode($data);
          
-                    $ch = curl_init('https://api2.asiacommerce.net/api/v2/source-categories/sync-woocategory');
-                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                    curl_setopt($ch, CURLINFO_HEADER_OUT, true);
-                    curl_setopt($ch, CURLOPT_POST, true);
-                    curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+                    // $ch = curl_init('https://api2.asiacommerce.net/api/v2/source-categories/sync-woocategory');
+                    // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                    // curl_setopt($ch, CURLINFO_HEADER_OUT, true);
+                    // curl_setopt($ch, CURLOPT_POST, true);
+                    // curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
          
-                    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-                        'Authorization:Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjIwMWEzNTVhN2ZiMzE1ZTUwOTAxMjA4NGQ5YTg3Njk3YzM1OGYwNTM3NWFmZDY5ZmE4YjRjOWY1NTQwZTkyZDZhMWQwZjU5YTE4NWIwMjU4In0.eyJhdWQiOiIyIiwianRpIjoiMjAxYTM1NWE3ZmIzMTVlNTA5MDEyMDg0ZDlhODc2OTdjMzU4ZjA1Mzc1YWZkNjlmYThiNGM5ZjU1NDBlOTJkNmExZDBmNTlhMTg1YjAyNTgiLCJpYXQiOjE1OTgwMDYwNjYsIm5iZiI6MTU5ODAwNjA2NiwiZXhwIjoxNjI5NTQyMDY2LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.VZgqGv93lPZnND6atQC9VMD1qhN4_YbTa04D9oqYJCZJRWPAV-yD5J-Q5E4VuH6i4fArhX34Sq7cYCb6ohFqEK3hX_E-BNFk-VXxHC7WWp7nC40IKybQVOIMEbY759uMM6_TF8qS53nc1g2rbJ-I0igDwEc-9-Q7O87Y7AU670r0zV46G8bUd3av42X6TiJ2uPukMO2OfCB_wDixgXxq2H-hxnu8NQ3VEVt5po0W2Uu-VLw_PpBNng6vOWkomSYqCC6T2QaZrPiPUBbgGDmTREnjH_0PZMNlos6Sk6GasrvaTsd_JYDq0OywLuzFPVkBz8Me1UWx4bBJIZbkXJj_ODcu_c0GyAp5HqlexH5A8BH9iIA2AoTuXcw4CfIfl8NAGnpvqY_YtxqXyENL1T-VTFYTx72vHO06UrH0x01BaFIbq9hFN2OKMBljm0U-oPJwA9F3utQUUuyD_9fAObFkEetwapCVUuggFQntFe0GCa2Ycrtjb6DuwaGjc7EzpmW85-RUT75SNMuK7pSIrMiDKOL66HSVGnyCF-LA_fCu8OPN8lfby75RQkUyoVXlUH5suQwgWVThjyi7_xDaYKam75iBjqFVm46eovboWH4cc33X6X13VEFNpebiEfrqm7nIRjcCwzXWDLW7Eqe-M4yWbYacze5GCu8c2ATuwMndx8Q',
-                        'Content-Type: application/json',
-                        'Content-Length: ' . strlen($payload))
-                    ); 
+                    // curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+                    //     'Authorization:Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjIwMWEzNTVhN2ZiMzE1ZTUwOTAxMjA4NGQ5YTg3Njk3YzM1OGYwNTM3NWFmZDY5ZmE4YjRjOWY1NTQwZTkyZDZhMWQwZjU5YTE4NWIwMjU4In0.eyJhdWQiOiIyIiwianRpIjoiMjAxYTM1NWE3ZmIzMTVlNTA5MDEyMDg0ZDlhODc2OTdjMzU4ZjA1Mzc1YWZkNjlmYThiNGM5ZjU1NDBlOTJkNmExZDBmNTlhMTg1YjAyNTgiLCJpYXQiOjE1OTgwMDYwNjYsIm5iZiI6MTU5ODAwNjA2NiwiZXhwIjoxNjI5NTQyMDY2LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.VZgqGv93lPZnND6atQC9VMD1qhN4_YbTa04D9oqYJCZJRWPAV-yD5J-Q5E4VuH6i4fArhX34Sq7cYCb6ohFqEK3hX_E-BNFk-VXxHC7WWp7nC40IKybQVOIMEbY759uMM6_TF8qS53nc1g2rbJ-I0igDwEc-9-Q7O87Y7AU670r0zV46G8bUd3av42X6TiJ2uPukMO2OfCB_wDixgXxq2H-hxnu8NQ3VEVt5po0W2Uu-VLw_PpBNng6vOWkomSYqCC6T2QaZrPiPUBbgGDmTREnjH_0PZMNlos6Sk6GasrvaTsd_JYDq0OywLuzFPVkBz8Me1UWx4bBJIZbkXJj_ODcu_c0GyAp5HqlexH5A8BH9iIA2AoTuXcw4CfIfl8NAGnpvqY_YtxqXyENL1T-VTFYTx72vHO06UrH0x01BaFIbq9hFN2OKMBljm0U-oPJwA9F3utQUUuyD_9fAObFkEetwapCVUuggFQntFe0GCa2Ycrtjb6DuwaGjc7EzpmW85-RUT75SNMuK7pSIrMiDKOL66HSVGnyCF-LA_fCu8OPN8lfby75RQkUyoVXlUH5suQwgWVThjyi7_xDaYKam75iBjqFVm46eovboWH4cc33X6X13VEFNpebiEfrqm7nIRjcCwzXWDLW7Eqe-M4yWbYacze5GCu8c2ATuwMndx8Q',
+                    //     'Content-Type: application/json',
+                    //     'Content-Length: ' . strlen($payload))
+                    // ); 
         
-                    $result = curl_exec($ch);
-                    curl_close($ch);
+                    // $result = curl_exec($ch);
+                    // curl_close($ch);
                     // END EDIT CRUD REST API ALI ORIGIN CATEGORIES
 				                  
 		            $isinya = array("level1"=>$data0, "level2"=>$data1, "level3"=>$data2);
 		            update_post_meta( $post_id, 'categories_level', ($isinya));
 
+		            $endpoint = 'https://api2.asiacommerce.net/api/v2/products/sync-wooproduct';
+ 
+					$body = [
+    					'source_id'  => 4,
+    					'product_id' => $post_id,
+					];
+ 
+					$body = wp_json_encode( $body );
+ 
+					$options = [
+    					'body'        => $body,
+    					'headers'     => [
+       						'Content-Type' => 'application/json',
+       						'Authorization'=> 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjRjNzMxNmE4OGZhYzBmNjE1ZTBlOWQ5ZTZlYjc4YzY4OTBmNDRjZjJiNGY2MjIzNzE4YjI5ODVlMzNlNmU2ZDU0M2VkOTRiNGNhYjBhOTEzIn0.eyJhdWQiOiIyIiwianRpIjoiNGM3MzE2YTg4ZmFjMGY2MTVlMGU5ZDllNmViNzhjNjg5MGY0NGNmMmI0ZjYyMjM3MThiMjk4NWUzM2U2ZTZkNTQzZWQ5NGI0Y2FiMGE5MTMiLCJpYXQiOjE2MTQzMzA3MzYsIm5iZiI6MTYxNDMzMDczNiwiZXhwIjoxNjQ1ODY2NzM2LCJzdWIiOiIyNzciLCJzY29wZXMiOltdfQ.A9PxemJX-k3fWDko1o4yHiAQLt3X9OOrVhTDU8CTAd9LdwBUo9CJVaSvB_x5qnXtUZ_QyByUpz2Qq6HwL4io9uzijXIzPOLOdJHXl9i42gB1k1mKql7gktBoqXH6Zd6i_OirSfBKFOIe8rmxOgdXGNdOEgDcYMKGFjG5PoSmKPbpS1JPJyqbKF1zAc4KNAb5TwmoqfYxbj-HR0IEN_MP2rRMooYfKJvMie6egtxbw2hLvXJC1hDfNdAvHjgqW9te1BAhblDQkZ2H4hz9JuVI_KK-hMAxhQiFhdrMl3tjqEL2P6h3hm1G2JVvJBHR6wmosigH6GjhhNraEwNME9DYo5R0v-EtAqNdFO4NOJg3oLqOEgaeX36C9otoQQhjzxvzAw9YdxcaRBEMU5O6I1iLbxoB3sf_T6J-VvldPzDMB1F62VavSz7Ml-hkNXB6L3At5TBlmxUjS_KdqYxJAEsGFLwvbcZzMncFmjkSGyBfNLBrWm57pVmhxzXXAEx4YLafTILwFAzsgplHZ8n7ZbZ8PRoKAPA61_RXuB2gzKaFRGEwA0ir2UsbSkB2RaLXaRSss6teWmkPNd6CO4RrkJma6-ZcpiDuhrFq34EwXsC8zU_NxVxPYnivFHIODruYefR_oXq54Y8oSXv1sMNwoiraZwn6nw63i_zZgQwpBP0YUOU',
+    					],
+    					'timeout'     => 60,
+   				 		'redirection' => 5,
+    					'blocking'    => true,
+    					'httpversion' => '1.0',
+    					'sslverify'   => false,
+    					'data_format' => 'body',
+					];
+ 
+					wp_remote_post( $endpoint, $options );
+
 					// END EDIT CATEGORY
 
-					$data = array(
-			            'source_id' => 4,
-			            'product_id' => $post_id
-			        );
+					// $data = array(
+			  //           'source_id' => 4,
+			  //           'product_id' => $post_id
+			  //       );
 			 
-			        $payload = json_encode($data);
+			  //       $payload = json_encode($data);
 			         
-			        // Prepare new cURL resource
-			        $ch = curl_init('https://api2.asiacommerce.net/api/v2/products/sync-wooproduct');
-			        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-			        curl_setopt($ch, CURLINFO_HEADER_OUT, true);
-			        curl_setopt($ch, CURLOPT_POST, true);
-			        curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+			  //       // Prepare new cURL resource
+			  //       $ch = curl_init('https://api2.asiacommerce.net/api/v2/products/sync-wooproduct');
+			  //       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			  //       curl_setopt($ch, CURLINFO_HEADER_OUT, true);
+			  //       curl_setopt($ch, CURLOPT_POST, true);
+			  //       curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
 			         
-			        // Set HTTP Header for POST request 
-			        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-		            'Authorization:Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjIwMWEzNTVhN2ZiMzE1ZTUwOTAxMjA4NGQ5YTg3Njk3YzM1OGYwNTM3NWFmZDY5ZmE4YjRjOWY1NTQwZTkyZDZhMWQwZjU5YTE4NWIwMjU4In0.eyJhdWQiOiIyIiwianRpIjoiMjAxYTM1NWE3ZmIzMTVlNTA5MDEyMDg0ZDlhODc2OTdjMzU4ZjA1Mzc1YWZkNjlmYThiNGM5ZjU1NDBlOTJkNmExZDBmNTlhMTg1YjAyNTgiLCJpYXQiOjE1OTgwMDYwNjYsIm5iZiI6MTU5ODAwNjA2NiwiZXhwIjoxNjI5NTQyMDY2LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.VZgqGv93lPZnND6atQC9VMD1qhN4_YbTa04D9oqYJCZJRWPAV-yD5J-Q5E4VuH6i4fArhX34Sq7cYCb6ohFqEK3hX_E-BNFk-VXxHC7WWp7nC40IKybQVOIMEbY759uMM6_TF8qS53nc1g2rbJ-I0igDwEc-9-Q7O87Y7AU670r0zV46G8bUd3av42X6TiJ2uPukMO2OfCB_wDixgXxq2H-hxnu8NQ3VEVt5po0W2Uu-VLw_PpBNng6vOWkomSYqCC6T2QaZrPiPUBbgGDmTREnjH_0PZMNlos6Sk6GasrvaTsd_JYDq0OywLuzFPVkBz8Me1UWx4bBJIZbkXJj_ODcu_c0GyAp5HqlexH5A8BH9iIA2AoTuXcw4CfIfl8NAGnpvqY_YtxqXyENL1T-VTFYTx72vHO06UrH0x01BaFIbq9hFN2OKMBljm0U-oPJwA9F3utQUUuyD_9fAObFkEetwapCVUuggFQntFe0GCa2Ycrtjb6DuwaGjc7EzpmW85-RUT75SNMuK7pSIrMiDKOL66HSVGnyCF-LA_fCu8OPN8lfby75RQkUyoVXlUH5suQwgWVThjyi7_xDaYKam75iBjqFVm46eovboWH4cc33X6X13VEFNpebiEfrqm7nIRjcCwzXWDLW7Eqe-M4yWbYacze5GCu8c2ATuwMndx8Q',
-		            'Content-Type: application/json',
-		            'Content-Length: ' . strlen($payload))
-		        	);
+			  //       // Set HTTP Header for POST request 
+			  //       curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+		   //          'Authorization:Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjIwMWEzNTVhN2ZiMzE1ZTUwOTAxMjA4NGQ5YTg3Njk3YzM1OGYwNTM3NWFmZDY5ZmE4YjRjOWY1NTQwZTkyZDZhMWQwZjU5YTE4NWIwMjU4In0.eyJhdWQiOiIyIiwianRpIjoiMjAxYTM1NWE3ZmIzMTVlNTA5MDEyMDg0ZDlhODc2OTdjMzU4ZjA1Mzc1YWZkNjlmYThiNGM5ZjU1NDBlOTJkNmExZDBmNTlhMTg1YjAyNTgiLCJpYXQiOjE1OTgwMDYwNjYsIm5iZiI6MTU5ODAwNjA2NiwiZXhwIjoxNjI5NTQyMDY2LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.VZgqGv93lPZnND6atQC9VMD1qhN4_YbTa04D9oqYJCZJRWPAV-yD5J-Q5E4VuH6i4fArhX34Sq7cYCb6ohFqEK3hX_E-BNFk-VXxHC7WWp7nC40IKybQVOIMEbY759uMM6_TF8qS53nc1g2rbJ-I0igDwEc-9-Q7O87Y7AU670r0zV46G8bUd3av42X6TiJ2uPukMO2OfCB_wDixgXxq2H-hxnu8NQ3VEVt5po0W2Uu-VLw_PpBNng6vOWkomSYqCC6T2QaZrPiPUBbgGDmTREnjH_0PZMNlos6Sk6GasrvaTsd_JYDq0OywLuzFPVkBz8Me1UWx4bBJIZbkXJj_ODcu_c0GyAp5HqlexH5A8BH9iIA2AoTuXcw4CfIfl8NAGnpvqY_YtxqXyENL1T-VTFYTx72vHO06UrH0x01BaFIbq9hFN2OKMBljm0U-oPJwA9F3utQUUuyD_9fAObFkEetwapCVUuggFQntFe0GCa2Ycrtjb6DuwaGjc7EzpmW85-RUT75SNMuK7pSIrMiDKOL66HSVGnyCF-LA_fCu8OPN8lfby75RQkUyoVXlUH5suQwgWVThjyi7_xDaYKam75iBjqFVm46eovboWH4cc33X6X13VEFNpebiEfrqm7nIRjcCwzXWDLW7Eqe-M4yWbYacze5GCu8c2ATuwMndx8Q',
+		   //          'Content-Type: application/json',
+		   //          'Content-Length: ' . strlen($payload))
+		   //      	);
 		 
-			        // Submit the POST request
-			        $result = curl_exec($ch);
+			  //       // Submit the POST request
+			  //       $result = curl_exec($ch);
 			 
 			 
-			        // Close cURL session handle
-			        curl_close($ch);
-		    	}
+			  //       // Close cURL session handle
+			  //       curl_close($ch);
+		    		}
 			}
 			
-    	}
+    		}
     	// end edit push to ALI
 	}
 
